@@ -25,7 +25,7 @@ function SidebarContent({ onNav }: { onNav?: () => void }) {
       <nav className="flex-1 space-y-1 p-3" aria-label="Admin">
         {NAV.map((item) => {
           const Icon = item.icon;
-          const active = item.exact ? path === item.to : path.startsWith(item.to);
+          const active = "exact" in item && item.exact ? path === item.to : path.startsWith(item.to);
           return (
             <Link
               key={item.to}
