@@ -57,7 +57,7 @@ function RoomDetail() {
               <img src={room.image} alt={room.name} width={1280} height={896} className="aspect-[4/3] w-full rounded-2xl object-cover shadow-elegant" />
             </Reveal>
             <div className="mt-4 grid grid-cols-3 gap-3">
-              {room.gallery.slice(0, 3).map((src, i) => (
+              {room.gallery.slice(0, 3).map((src: string, i: number) => (
                 <img key={i} src={src} alt={`${room.name} view ${i + 1}`} loading="lazy" decoding="async" className="aspect-square w-full rounded-lg object-cover" />
               ))}
             </div>
@@ -89,7 +89,7 @@ function RoomDetail() {
               <div className="mt-6 rounded-xl border bg-card p-5">
                 <h2 className="mb-3 font-display text-lg">In this room</h2>
                 <ul className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-2">
-                  {room.amenities.map((a) => (
+                  {room.amenities.map((a: string) => (
                     <li key={a} className="flex items-center gap-2 text-muted-foreground">
                       <Check className="size-4 text-primary" /> {a}
                     </li>
