@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, MessageCircle, Clock } from "lucide-react";
 import { toast } from "sonner";
 
+const url = `${SITE.url}/contact`;
 const title = `Contact — ${SITE.name}`;
 const description = `Get in touch with ${SITE.name} in ${SITE.location.city}. Phone, email, WhatsApp, and our enquiry form.`;
 
@@ -21,8 +22,9 @@ export const Route = createFileRoute("/contact")({
     meta: [
       { title }, { name: "description", content: description },
       { property: "og:title", content: title }, { property: "og:description", content: description },
+      { property: "og:url", content: url },
     ],
-    links: [{ rel: "canonical", href: `${SITE.url}/contact` }],
+    links: [{ rel: "canonical", href: url }],
   }),
   component: ContactPage,
 });
