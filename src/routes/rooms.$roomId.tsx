@@ -86,6 +86,15 @@ function RoomDetail() {
   return (
     <PublicLayout>
       <section className="container-prose pt-28 md:pt-36">
+        <nav aria-label="Breadcrumb" className="mb-3 text-xs text-muted-foreground">
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li><Link to="/" className="hover:text-foreground">Home</Link></li>
+            <li aria-hidden>/</li>
+            <li><Link to="/rooms" className="hover:text-foreground">Rooms</Link></li>
+            <li aria-hidden>/</li>
+            <li className="text-foreground" aria-current="page">{room.name}</li>
+          </ol>
+        </nav>
         <Link to="/rooms" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
           <ArrowLeft className="size-4" /> All rooms
         </Link>
