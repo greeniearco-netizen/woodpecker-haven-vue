@@ -7,7 +7,9 @@ import { GALLERY } from "@/data/gallery";
 import { SITE } from "@/constants/site";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import galleryOg from "@/assets/hero.jpg";
 
+const url = `${SITE.url}/gallery`;
 const title = `Gallery — ${SITE.name}`;
 const description = "Photos of rooms, gardens, dining, and the birdlife that calls Woodpecker home.";
 
@@ -16,8 +18,10 @@ export const Route = createFileRoute("/gallery")({
     meta: [
       { title }, { name: "description", content: description },
       { property: "og:title", content: title }, { property: "og:description", content: description },
+      { property: "og:image", content: galleryOg }, { property: "og:url", content: url },
+      { name: "twitter:image", content: galleryOg },
     ],
-    links: [{ rel: "canonical", href: `${SITE.url}/gallery` }],
+    links: [{ rel: "canonical", href: url }],
   }),
   component: GalleryPage,
 });
