@@ -10,6 +10,7 @@ import { MapSection } from "@/components/home/MapSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { SITE } from "@/constants/site";
 import { Reveal } from "@/components/shared/Reveal";
+import heroOg from "@/assets/hero.jpg";
 
 const title = `${SITE.name} — Comfortable Accommodation in Ficksburg`;
 const description = SITE.description;
