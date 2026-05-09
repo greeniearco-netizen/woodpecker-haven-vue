@@ -5,9 +5,20 @@ import { RoomCard } from "@/components/rooms/RoomCard";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { Reveal } from "@/components/shared/Reveal";
 import { SITE } from "@/constants/site";
+import roomsOg from "@/assets/room-1.jpg";
 
+const url = `${SITE.url}/rooms`;
 const title = `Rooms & Suites — ${SITE.name}`;
 const description = "Comfortable double, twin, and family rooms in Ficksburg. Free WiFi, secure parking, and breakfast included.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+    { "@type": "ListItem", position: 2, name: "Rooms", item: url },
+  ],
+};
 
 export const Route = createFileRoute("/rooms")({
   head: () => ({
@@ -16,8 +27,12 @@ export const Route = createFileRoute("/rooms")({
       { name: "description", content: description },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
+      { property: "og:image", content: roomsOg },
+      { property: "og:url", content: url },
+      { name: "twitter:image", content: roomsOg },
     ],
-    links: [{ rel: "canonical", href: `${SITE.url}/rooms` }],
+    links: [{ rel: "canonical", href: url }],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   component: RoomsPage,
 });
