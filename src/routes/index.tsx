@@ -14,25 +14,92 @@ import { Reveal } from "@/components/shared/Reveal";
 const title = `${SITE.name} — Comfortable Accommodation in Ficksburg`;
 const description = SITE.description;
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
-  name: SITE.name,
-  description,
-  url: SITE.url,
-  telephone: SITE.contact.phone,
-  email: SITE.contact.email,
-  priceRange: "R850 – R1450",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.location.street,
-    addressLocality: SITE.location.city,
-    addressRegion: SITE.location.region,
-    postalCode: SITE.location.postalCode,
-    addressCountry: SITE.location.countryCode,
-  },
-  geo: { "@type": "GeoCoordinates", latitude: SITE.location.lat, longitude: SITE.location.lng },
+const address = {
+  "@type": "PostalAddress",
+  streetAddress: SITE.location.street,
+  addressLocality: SITE.location.city,
+  addressRegion: SITE.location.region,
+  postalCode: SITE.location.postalCode,
+  addressCountry: SITE.location.countryCode,
 };
+
+const geo = {
+  "@type": "GeoCoordinates",
+  latitude: SITE.location.lat,
+  longitude: SITE.location.lng,
+};
+
+const sameAs = [SITE.social.facebook, SITE.social.instagram].filter(Boolean);
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "@id": `${SITE.url}/#lodging`,
+    name: SITE.name,
+    description,
+    url: SITE.url,
+    telephone: SITE.contact.phone,
+    email: SITE.contact.email,
+    priceRange: "R850 – R1450",
+    address,
+    geo,
+    sameAs,
+    image: `${SITE.url}/og-image.jpg`,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": `${SITE.url}/#localbusiness`,
+    name: SITE.name,
+    description,
+    url: SITE.url,
+    telephone: SITE.contact.phone,
+    email: SITE.contact.email,
+    priceRange: "R850 – R1450",
+    address,
+    geo,
+    areaServed: { "@type": "City", name: SITE.location.city },
+    sameAs,
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        opens: "07:00",
+        closes: "21:00",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
+    name: SITE.name,
+    url: SITE.url,
+    logo: `${SITE.url}/favicon.ico`,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        telephone: SITE.contact.phone,
+        email: SITE.contact.email,
+        contactType: "reservations",
+        areaServed: SITE.location.countryCode,
+        availableLanguage: ["English", "Afrikaans"],
+      },
+    ],
+    sameAs,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    description,
+    publisher: { "@id": `${SITE.url}/#organization` },
+    inLanguage: "en-ZA",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
