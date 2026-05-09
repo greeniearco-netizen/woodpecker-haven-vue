@@ -17,8 +17,41 @@ export const Route = createFileRoute("/rooms/$roomId")({
   head: ({ loaderData }) => {
     const room = loaderData?.room;
     if (!room) return {};
-    const title = `${room.name} — ${SITE.name}`;
-    const description = room.shortDescription;
+    const url = `${SITE.url}/rooms/${room.slug}`;
+    const title = `${room.name} — ${SITE.name} | Ficksburg`;
+    const description = `${room.shortDescription} Sleeps ${room.maxGuests}, ${room.bedType}, ${room.size}. From R${room.pricePerNight}/night, breakfast included.`;
+    const jsonLd = [
+      {
+        "@context": "https://schema.org",
+        "@type": "HotelRoom",
+        name: room.name,
+        description: room.description,
+        url,
+        image: room.gallery,
+        occupancy: { "@type": "QuantitativeValue", maxValue: room.maxGuests },
+        bed: { "@type": "BedDetails", typeOfBed: room.bedType },
+        floorSize: { "@type": "QuantitativeValue", value: room.size },
+        amenityFeature: room.amenities.map((a: string) => ({
+          "@type": "LocationFeatureSpecification", name: a,
+        })),
+        offers: {
+          "@type": "Offer",
+          price: room.pricePerNight,
+          priceCurrency: "ZAR",
+          availability: room.available ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+          url,
+        },
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+          { "@type": "ListItem", position: 2, name: "Rooms", item: `${SITE.url}/rooms` },
+          { "@type": "ListItem", position: 3, name: room.name, item: url },
+        ],
+      },
+    ];
     return {
       meta: [
         { title },
@@ -26,9 +59,14 @@ export const Route = createFileRoute("/rooms/$roomId")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:image", content: room.image },
+        { property: "og:url", content: url },
+        { property: "og:type", content: "product" },
         { name: "twitter:image", content: room.image },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
       ],
-      links: [{ rel: "canonical", href: `${SITE.url}/rooms/${room.slug}` }],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
     };
   },
   notFoundComponent: () => (
@@ -48,6 +86,15 @@ function RoomDetail() {
   return (
     <PublicLayout>
       <section className="container-prose pt-28 md:pt-36">
+        <nav aria-label="Breadcrumb" className="mb-3 text-xs text-muted-foreground">
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li><Link to="/" className="hover:text-foreground">Home</Link></li>
+            <li aria-hidden>/</li>
+            <li><Link to="/rooms" className="hover:text-foreground">Rooms</Link></li>
+            <li aria-hidden>/</li>
+            <li className="text-foreground" aria-current="page">{room.name}</li>
+          </ol>
+        </nav>
         <Link to="/rooms" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground">
           <ArrowLeft className="size-4" /> All rooms
         </Link>
