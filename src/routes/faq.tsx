@@ -5,7 +5,9 @@ import { Reveal } from "@/components/shared/Reveal";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { FAQ } from "@/data/faq";
 import { SITE } from "@/constants/site";
+import faqOg from "@/assets/breakfast.jpg";
 
+const url = `${SITE.url}/faq`;
 const title = `FAQ — ${SITE.name}`;
 const description = "Answers to common questions about check-in, breakfast, parking, WiFi, and our cancellation policy.";
 
@@ -24,8 +26,16 @@ export const Route = createFileRoute("/faq")({
     meta: [
       { title }, { name: "description", content: description },
       { property: "og:title", content: title }, { property: "og:description", content: description },
+      { property: "og:url", content: url },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: faqOg },
+      { property: "og:image:alt", content: `${SITE.name} breakfast` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: faqOg },
     ],
-    links: [{ rel: "canonical", href: `${SITE.url}/faq` }],
+    links: [{ rel: "canonical", href: url }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   component: FaqPage,

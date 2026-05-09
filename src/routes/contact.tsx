@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, MessageCircle, Clock } from "lucide-react";
 import { toast } from "sonner";
+import contactOg from "@/assets/garden.jpg";
 
 const url = `${SITE.url}/contact`;
 const title = `Contact — ${SITE.name}`;
@@ -23,6 +24,13 @@ export const Route = createFileRoute("/contact")({
       { title }, { name: "description", content: description },
       { property: "og:title", content: title }, { property: "og:description", content: description },
       { property: "og:url", content: url },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: contactOg },
+      { property: "og:image:alt", content: `${SITE.name} garden` },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: contactOg },
     ],
     links: [{ rel: "canonical", href: url }],
   }),

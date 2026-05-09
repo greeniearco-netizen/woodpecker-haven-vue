@@ -2,10 +2,20 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SITE } from "@/constants/site";
 
+const title = `Privacy Policy — ${SITE.name}`;
+const description = "How we handle your personal information.";
+const url = `${SITE.url}/privacy`;
+
 export const Route = createFileRoute("/privacy")({
   head: () => ({
-    meta: [{ title: `Privacy Policy — ${SITE.name}` }, { name: "description", content: "How we handle your personal information." }],
-    links: [{ rel: "canonical", href: `${SITE.url}/privacy` }],
+    meta: [
+      { title }, { name: "description", content: description },
+      { property: "og:title", content: title }, { property: "og:description", content: description },
+      { property: "og:url", content: url }, { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: title }, { name: "twitter:description", content: description },
+    ],
+    links: [{ rel: "canonical", href: url }],
   }),
   component: () => (
     <PublicLayout>

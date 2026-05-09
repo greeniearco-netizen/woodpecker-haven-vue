@@ -10,6 +10,7 @@ import { MapSection } from "@/components/home/MapSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { SITE } from "@/constants/site";
 import { Reveal } from "@/components/shared/Reveal";
+import heroOg from "@/assets/hero.jpg";
 
 const title = `${SITE.name} — Comfortable Accommodation in Ficksburg`;
 const description = SITE.description;
@@ -110,8 +111,12 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:url", content: SITE.url },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: heroOg },
+      { property: "og:image:alt", content: `${SITE.name} exterior and gardens` },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: heroOg },
     ],
     links: [{ rel: "canonical", href: SITE.url }],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
