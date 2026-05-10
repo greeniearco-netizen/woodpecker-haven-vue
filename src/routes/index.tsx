@@ -142,7 +142,7 @@ function Index() {
             A warm welcome, every time you walk through our door.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Woodpecker Guest House offers thoughtfully appointed rooms, a hearty home-cooked breakfast, and the gentle calm of a country garden — all just minutes from the centre of Ficksburg.
+            Woodpecker Guesthouse offers thoughtfully appointed rooms, a hearty home-cooked breakfast, and the gentle calm of a country garden — all just minutes from the centre of Ficksburg.
           </p>
         </Reveal>
       </section>

@@ -10,7 +10,7 @@ export function AboutPreview() {
         <div className="relative">
           <img
             src={garden}
-            alt="Lush garden at Woodpecker Guest House"
+            alt="Lush garden at Woodpecker Guesthouse"
             width={1280}
             height={896}
             loading="lazy"
@@ -27,7 +27,7 @@ export function AboutPreview() {
         <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-accent">About us</p>
         <h2 className="font-display text-3xl sm:text-4xl md:text-5xl">A countryside escape with character</h2>
         <p className="mt-5 text-muted-foreground">
-          Tucked away on a quiet street in Ficksburg, Woodpecker Guest House is a family-run retreat where every guest is welcomed like an old friend. Our gardens host more than thirty species of birds — including the cardinal woodpecker that gave us our name.
+          Tucked away on a quiet street in Ficksburg, Woodpecker Guesthouse is a family-run retreat where every guest is welcomed like an old friend. Our gardens host more than thirty species of birds — including the cardinal woodpecker that gave us our name.
         </p>
         <p className="mt-3 text-muted-foreground">
           Whether you're passing through, exploring the Eastern Free State, or simply need a weekend away, we offer the kind of stay you'll want to repeat.
