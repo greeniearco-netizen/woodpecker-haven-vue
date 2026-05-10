@@ -78,9 +78,6 @@ export function AdminLayout({ children, title, description, actions }: { childre
         </header>
 
         <div className="flex-1 p-4 md:p-8">
-          <div className="mb-4 rounded-md border border-accent/30 bg-accent/10 px-4 py-2 text-xs text-accent-foreground">
-            <strong className="text-accent">Demo only.</strong> This admin UI uses mock data. Wire authentication and a backend before deploying.
-          </div>
           {children}
         </div>
       </div>
