@@ -33,6 +33,34 @@ function AdminSettings() {
             <div><Label>WhatsApp number</Label><Input defaultValue={SITE.contact.whatsapp} /></div>
           </CardContent>
         </Card>
+        <Card>
+          <CardHeader><CardTitle>Address</CardTitle></CardHeader>
+          <CardContent className="space-y-3">
+            <div><Label>Street</Label><Input defaultValue={SITE.location.street} /></div>
+            <div className="grid grid-cols-2 gap-3">
+              <div><Label>City</Label><Input defaultValue={SITE.location.city} /></div>
+              <div><Label>Postal code</Label><Input defaultValue={SITE.location.postalCode} /></div>
+            </div>
+            <div><Label>Region</Label><Input defaultValue={SITE.location.region} /></div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>Host & languages</CardTitle></CardHeader>
+          <CardContent className="space-y-3">
+            <div><Label>Host name</Label><Input defaultValue={SITE.host.name} /></div>
+            <div><Label>Languages spoken (comma separated)</Label><Input defaultValue={SITE.languages.join(", ")} /></div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader><CardTitle>Guest score</CardTitle></CardHeader>
+          <CardContent className="space-y-3">
+            <div className="grid grid-cols-2 gap-3">
+              <div><Label>Overall score</Label><Input type="number" step="0.1" defaultValue={SITE.ratings.overall} /></div>
+              <div><Label>Review count</Label><Input type="number" defaultValue={SITE.ratings.reviews} /></div>
+            </div>
+            <div><Label>Label (e.g. Fabulous)</Label><Input defaultValue={SITE.ratings.label} /></div>
+          </CardContent>
+        </Card>
         <Card className="lg:col-span-2">
           <CardHeader><CardTitle>Booking integration</CardTitle></CardHeader>
           <CardContent className="space-y-3">
