@@ -30,10 +30,10 @@ export const Route = createFileRoute("/about")({
 });
 
 const HIGHLIGHTS = [
-  { icon: Heart, title: "Family-run hospitality", desc: "Owner-managed, with attention to every detail and every guest." },
-  { icon: Bird, title: "A haven for birdlife", desc: "Over 30 species of birds visit our gardens — bring your binoculars." },
-  { icon: Trees, title: "Tranquil gardens", desc: "Mature trees, indigenous plants, and quiet seating to unwind in." },
-  { icon: Sparkles, title: "Spotlessly maintained", desc: "Crisp linens, sparkling bathrooms, and thoughtful in-room touches." },
+  { icon: Heart, title: "Where guests become friends", desc: "Our promise — personalised, flexible hospitality for business and leisure travellers." },
+  { icon: Sparkles, title: "Professional & passionate", desc: "Motivated, friendly staff obsessive about exceeding guest expectations." },
+  { icon: Trees, title: "In the heart of Ficksburg", desc: "Quiet setting close to the Golf Course, just minutes from the town centre." },
+  { icon: Bird, title: "A haven for birdlife", desc: "Cardinal woodpeckers and many other species visit our mature gardens daily." },
 ];
 
 function AboutPage() {
@@ -43,8 +43,8 @@ function AboutPage() {
         <Reveal>
           <SectionHeader
             eyebrow="Our story"
-            title="A guest house with a quiet soul"
-            description="For over fifteen years, Woodpecker Guest House has welcomed travellers, families, and weekend escapees to our small corner of the Free State."
+            title="Where guests become friends"
+            description="Located in the heart of Ficksburg close to the Golf Course, Woodpecker Guesthouse is the preferred destination of choice — offering professional, personalised, flexible hospitality and service to the discerning business and leisure sector."
           />
         </Reveal>
       </section>
@@ -54,12 +54,15 @@ function AboutPage() {
           <img src={lounge} alt="The cosy guest lounge" width={1280} height={896} loading="lazy" className="aspect-[5/4] w-full rounded-2xl object-cover shadow-elegant" />
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display text-3xl md:text-4xl">From a family home to a cherished guest house</h2>
+          <h2 className="font-display text-3xl md:text-4xl">Our vision & values</h2>
           <p className="mt-4 text-muted-foreground">
-            What began as a sandstone family home on a quiet Ficksburg street has grown — gently and carefully — into a guest house known for its warmth, comfort, and proper home-cooked breakfasts.
+            Woodpecker Guesthouse is recognised as unique in the industry for fulfilling our promise — <em>"Where guests become friends."</em>
           </p>
           <p className="mt-3 text-muted-foreground">
-            We've kept the soul of the original house while adding the comforts modern travellers expect: fast WiFi, climate control, secure parking, and the kind of beds you don't want to leave.
+            We are a professional, passionate, caring and empowering guesthouse that encourages innovation and engagement. We are a learning organisation committed to the retention and development of our people as an essential part of building strong, respectful and enduring guest relationships.
+          </p>
+          <p className="mt-3 text-muted-foreground">
+            Managed by <strong>{SITE.host.name}</strong> — company review score <strong>{SITE.host.companyScore}</strong> based on {SITE.host.companyReviews} reviews. Languages spoken: {SITE.languages.join(", ")}.
           </p>
         </Reveal>
       </section>
