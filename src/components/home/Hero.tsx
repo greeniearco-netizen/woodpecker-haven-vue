@@ -12,7 +12,7 @@ export function Hero() {
     <section className="relative isolate flex min-h-[88vh] items-center overflow-hidden">
       <img
         src={hero}
-        alt="Woodpecker Guest House at golden hour"
+        alt="Woodpecker Guesthouse at golden hour"
         width={1920}
         height={1280}
         fetchPriority="high"

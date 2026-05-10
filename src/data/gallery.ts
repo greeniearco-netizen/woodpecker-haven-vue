@@ -11,7 +11,7 @@ import bathroom from "@/assets/bathroom.jpg";
 import landscape from "@/assets/landscape.jpg";
 
 export const GALLERY: GalleryImage[] = [
-  { id: "1", src: hero, alt: "Woodpecker Guest House at golden hour", category: "exterior", width: 1920, height: 1280 },
+  { id: "1", src: hero, alt: "Woodpecker Guesthouse at golden hour", category: "exterior", width: 1920, height: 1280 },
   { id: "2", src: room1, alt: "Garden Double room interior", category: "rooms", width: 1280, height: 896 },
   { id: "3", src: garden, alt: "Birdsong garden with seating", category: "garden", width: 1280, height: 896 },
   { id: "4", src: breakfast, alt: "Hearty breakfast spread", category: "dining", width: 1280, height: 896 },

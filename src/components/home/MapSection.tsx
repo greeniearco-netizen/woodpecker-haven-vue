@@ -17,7 +17,7 @@ export function MapSection() {
       <Reveal delay={0.1}>
         <div className="mt-10 overflow-hidden rounded-2xl border shadow-card">
           <iframe
-            title="Map of Woodpecker Guest House location"
+            title="Map of Woodpecker Guesthouse location"
             src={`https://www.google.com/maps?q=${q}&output=embed`}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

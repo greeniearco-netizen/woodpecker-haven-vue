@@ -125,7 +125,7 @@ function ContactPage() {
 
         <div className="mt-16 overflow-hidden rounded-2xl border shadow-card">
           <iframe
-            title="Map of Woodpecker Guest House"
+            title="Map of Woodpecker Guesthouse"
             src={`https://www.google.com/maps?q=${q}&output=embed`}
             loading="lazy"
             className="h-[400px] w-full border-0"
