@@ -8,6 +8,7 @@ import { GalleryPreview } from "@/components/home/GalleryPreview";
 import { Testimonials } from "@/components/home/Testimonials";
 import { MapSection } from "@/components/home/MapSection";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { RatingsBar } from "@/components/home/RatingsBar";
 import { SITE } from "@/constants/site";
 import { Reveal } from "@/components/shared/Reveal";
 import heroOg from "@/assets/hero.jpg";
@@ -42,7 +43,13 @@ const jsonLd = [
     url: SITE.url,
     telephone: SITE.contact.phone,
     email: SITE.contact.email,
-    priceRange: "R850 – R1450",
+    priceRange: "R850 – R1950",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: SITE.ratings.overall,
+      bestRating: 10,
+      reviewCount: SITE.ratings.reviews,
+    },
     address,
     geo,
     sameAs,
@@ -57,7 +64,7 @@ const jsonLd = [
     url: SITE.url,
     telephone: SITE.contact.phone,
     email: SITE.contact.email,
-    priceRange: "R850 – R1450",
+    priceRange: "R850 – R1950",
     address,
     geo,
     areaServed: { "@type": "City", name: SITE.location.city },
@@ -139,6 +146,7 @@ function Index() {
           </p>
         </Reveal>
       </section>
+      <RatingsBar />
       <FeaturedRooms />
       <AmenitiesGrid />
       <AboutPreview />
