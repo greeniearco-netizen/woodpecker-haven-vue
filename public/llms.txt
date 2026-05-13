@@ -1,0 +1,19 @@
+# Woodpecker Guesthouse
+
+> Comfortable guesthouse in Ficksburg, Free State, South Africa — private en-suite rooms, free WiFi, secure parking, and a hearty breakfast. Rated 8.8 "Fabulous" on Booking.com.
+
+Woodpecker Guesthouse is a family-run guesthouse on Kort Street in Ficksburg, hosted by Wanda Du Toit. Rooms range from cosy economy twins to family suites with disability access, all with tea/coffee facilities and modern bathrooms. Guests enjoy a garden setting, outdoor fireplace, and easy access to Ficksburg town centre and the Golf Club.
+
+## Pages
+
+- [Home](/): Overview of the guesthouse, featured rooms, amenities, and guest ratings.
+- [Rooms](/rooms): All room types with rates, bed configurations, and amenities.
+- [Gallery](/gallery): Photos of rooms, gardens, breakfast, and surroundings.
+- [About](/about): Our story, hosts, and what makes a stay with us special.
+- [FAQ](/faq): Check-in times, breakfast, parking, pets, payment, and more.
+- [Contact](/contact): Phone, WhatsApp, email, address, and enquiry form.
+
+## Optional
+
+- [Privacy Policy](/privacy): How we handle your personal information.
+- [Terms](/terms): Booking, cancellation, and house rules.

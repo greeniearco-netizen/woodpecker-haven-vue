@@ -5,7 +5,7 @@ export const SITE = {
   shortName: "Woodpecker",
   tagline: "Where guests become friends",
   description:
-    "Woodpecker Guesthouse in the heart of Ficksburg — comfortable rooms with private bathrooms, free WiFi, free secure parking, and a hearty breakfast. Rated 8.8 fabulous on Booking.com.",
+    "Comfortable Ficksburg guesthouse with private en-suite rooms, free WiFi, secure parking, and a hearty breakfast. Rated 8.8 'Fabulous' on Booking.com.",
   url: "https://woodpeckerguesthouse.co.za",
   location: {
     street: "Kort Street 4",
