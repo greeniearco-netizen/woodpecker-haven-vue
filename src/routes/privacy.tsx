@@ -3,7 +3,7 @@ import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SITE } from "@/constants/site";
 
 const title = `Privacy Policy — ${SITE.name}`;
-const description = "How we handle your personal information.";
+const description = `How ${SITE.name} collects, uses, and protects your personal information when you enquire or book a stay with us in Ficksburg.`;
 const url = `${SITE.url}/privacy`;
 
 export const Route = createFileRoute("/privacy")({

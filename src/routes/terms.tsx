@@ -3,7 +3,7 @@ import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SITE } from "@/constants/site";
 
 const title = `Terms — ${SITE.name}`;
-const description = "Booking and stay terms.";
+const description = `Booking, cancellation, and house-rule terms for stays at ${SITE.name} in Ficksburg, Free State.`;
 const url = `${SITE.url}/terms`;
 
 export const Route = createFileRoute("/terms")({
