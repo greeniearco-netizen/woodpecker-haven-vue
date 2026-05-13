@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin
 
-Sitemap: https://woodpeckerguesthouse.co.za/sitemap.xml
+Sitemap: https://woodpecker-haven-vue.lovable.app/sitemap.xml
