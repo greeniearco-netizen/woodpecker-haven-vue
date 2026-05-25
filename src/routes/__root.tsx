@@ -9,6 +9,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { Toaster } from "@/components/ui/sonner";
+import { PwaInstallPrompt } from "@/components/PwaInstallPrompt";
 import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
@@ -122,6 +123,7 @@ function RootComponent() {
       <ScrollOnRouteChange />
       <Outlet />
       <Toaster richColors position="top-right" />
+      <PwaInstallPrompt />
     </QueryClientProvider>
   );
 }
