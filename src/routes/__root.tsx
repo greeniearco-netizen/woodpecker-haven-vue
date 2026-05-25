@@ -123,6 +123,7 @@ function RootComponent() {
       <ScrollOnRouteChange />
       <Outlet />
       <Toaster richColors position="top-right" />
+      <PwaInstallPrompt />
     </QueryClientProvider>
   );
 }
