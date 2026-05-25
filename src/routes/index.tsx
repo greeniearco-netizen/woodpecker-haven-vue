@@ -125,7 +125,10 @@ export const Route = createFileRoute("/")({
       { name: "twitter:description", content: description },
       { name: "twitter:image", content: heroOg },
     ],
-    links: [{ rel: "canonical", href: SITE.url }],
+    links: [
+      { rel: "canonical", href: SITE.url },
+      { rel: "preload", as: "image", href: heroOg, fetchpriority: "high" },
+    ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
   component: Index,
