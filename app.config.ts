@@ -1,12 +1,7 @@
-import { defineConfig } from "@tanstack/react-start";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
+import { defineConfig } from "vite";
 
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss(), tsConfigPaths()],
-  },
-  server: {
-    preset: "vercel",
-  },
+  plugins: [tailwindcss(), tsConfigPaths()],
 });
