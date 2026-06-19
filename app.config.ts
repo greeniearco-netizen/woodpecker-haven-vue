@@ -1,4 +1,4 @@
-import { defineConfig } from "@tanstack/react-start/config";
+import { defineConfig } from "@tanstack/react-start";
 import tailwindcss from "@tailwindcss/vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
