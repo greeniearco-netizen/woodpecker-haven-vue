@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx vinxi build",
+  "buildCommand": "./node_modules/.bin/vinxi build",
   "outputDirectory": ".output/public",
   "framework": null
 }
