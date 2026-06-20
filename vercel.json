@@ -1,10 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "vite build --config vite.vercel.config.ts",
-  "outputDirectory": "dist",
+  "outputDirectory": "dist/client",
   "framework": null,
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/((?!api/|assets/|.*\\..*).*)", "destination": "/index.html" }
+    { "source": "/((?!assets/|.*\\..*).*)", "destination": "/_shell.html" }
   ],
   "headers": [
     {
@@ -17,6 +18,12 @@
       "source": "/manifest.webmanifest",
       "headers": [
         { "key": "Content-Type", "value": "application/manifest+json" }
+      ]
+    },
+    {
+      "source": "/sw.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ]
