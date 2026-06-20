@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "vite build",
+  "buildCommand": "vite build --config vite.vercel.config.ts",
   "outputDirectory": "dist",
   "framework": null,
   "rewrites": [
